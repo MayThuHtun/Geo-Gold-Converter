@@ -5,5 +5,32 @@ myapp=Flask(__name__)
 @myapp.route("/")
 def main():
     return render_template("index.html")
+
+
+@myapp.route("/home")
+def home():
+    return render_template("home.html")
+
+@myapp.route("/partner")
+def partner():
+    return render_template("partner.html")
+
+@myapp.route("/resources")
+def resources():
+    return render_template("resource.html")
+
+@myapp.route("/tools")
+def tools():
+    return render_template("tools.html")
+
+@myapp.route("/work")
+def work():
+    return render_template("work.html")
+
+@myapp.route("/questions_answers")
+def questions_answers():
+    return render_template("questions_answers.html")
+
+
 if __name__ == "__main__":
     myapp.run(debug=True)
