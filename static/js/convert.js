@@ -7,9 +7,9 @@ $(document).ready(function(){
 				console.log(response);
 			},
 			data: {
-				myinput: $('label[for=source]').html(),
-				myoutput: $('label[for=destination]').html(),
-				source: $('#source').val()
+				myinput: $('.is-active > div.source >label').text(),
+				myoutput: $('.is-active > div.destination >label').text();,
+				source: $('.is-active > div.source > textarea').val();
 			}
 		})
 
@@ -19,7 +19,7 @@ $(document).ready(function(){
 			}
 			else {
 				console.log("ehlo");
-				$("#destination").val(data.output).show();
+				$('.is-active > div.destination > textarea').val(data.output).show();
 			}
 		});
 		event.preventDefault();
