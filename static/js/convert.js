@@ -8,8 +8,8 @@ $(document).ready(function(){
 			},
 			data: {
 				myinput: $('.is-active > div.source >label').text(),
-				myoutput: $('.is-active > div.destination >label').text();,
-				source: $('.is-active > div.source > textarea').val();
+				myoutput: $('.is-active > div.destination >label').text(),
+				source: $('.is-active > div.source > textarea').val()
 			}
 		})
 
