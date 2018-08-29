@@ -17,7 +17,7 @@ def partner():
 
 @myapp.route("/resources")
 def resources():
-    return render_template("resource.html")
+    return render_template("resources.html")
 
 @myapp.route("/tools")
 def tools():
