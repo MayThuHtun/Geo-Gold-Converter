@@ -73,6 +73,14 @@
     .mdl-textfield{
   margin-left: 3em;
 }
+    @font-face {
+			font-family: 'win_innwaregular';
+			src: url("{{url_for('static', filename='wininnwa-webfont.woff2')}}") format('woff2'),
+				url("{{url_for('static', filename='wininnwa-webfont.woff')}}") format('woff');
+			font-weight: normal;
+			font-size:50px;
+			font-style: normal;
+		}
     </style>
     <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--6-col">
@@ -85,24 +93,24 @@
   </div>
   <div class="mdl-tabs__panel is-active" id="Zawgyi-panel">
   <form id="convert" action="#">
-  <div class="mdl-textfield mdl-js-textfield">
-    <textarea class="mdl-textfield__input" type="text"  id="#source-zg"></textarea>
+  <div class="source mdl-textfield mdl-js-textfield">
+    <textarea class="mdl-textfield__input" type="text"  id="#source-zg" style="font-family: Zawgyi-One;"></textarea>
     <label class="mdl-textfield__label" for="source">Zawgyi</label>
   </div>
 </form>
 </div>  
 <div id="convert" class="mdl-tabs__panel" id="Unicode-panel">
   <form action="#">
-  <div class="mdl-textfield mdl-js-textfield">
-    <textarea class="mdl-textfield__input" type="text"  id="#source-uni" ></textarea>
+  <div class="source mdl-textfield mdl-js-textfield">
+    <textarea class="mdl-textfield__input" type="text"  id="#source-uni" style="font-family: pyidaungsu"></textarea>
     <label class="mdl-textfield__label" for="source">Unicode</label>
   </div>
 </form>
 </div> 
 <div class="mdl-tabs__panel" id="Win-panel">
   <form id="convert" action="#">
-  <div class="mdl-textfield mdl-js-textfield">
-    <textarea class="mdl-textfield__input" type="text"  id="#source-win" ></textarea>
+  <div class="source mdl-textfield mdl-js-textfield">
+    <textarea class="mdl-textfield__input" type="text"  id="#source-win" style="font-family: win_innwaregular;"></textarea>
     <label class="mdl-textfield__label" for="source">WinMyanmar</label>
   </div>
 </form>
@@ -130,23 +138,23 @@
   <div class="mdl-tabs__panel" id="Zawgyi-panel">
   <form action="#">
   <div class="mdl-textfield mdl-js-textfield">
-    <textarea class="mdl-textfield__input" type="text"  id="#destination-zg" ></textarea>
+    <textarea class="destination mdl-textfield__input" type="text"  id="#destination-zg" style="font-family: Zawgyi-One;"></textarea>
     <label class="mdl-textfield__label" for="destination">Zawgyi</label>
   </div>
 </form>
 </div>  
 <div class="mdl-tabs__panel is-active" id="Unicode-panel">
   <form action="#">
-  <div class="mdl-textfield mdl-js-textfield">
-    <textarea class="mdl-textfield__input" type="text"  id="#destination-uni" ></textarea>
+  <div class="destination mdl-textfield mdl-js-textfield">
+    <textarea class="mdl-textfield__input" type="text"  id="#destination-uni" style="font-family: pyidaungsu;"></textarea>
     <label class="mdl-textfield__label" for="destination">Unicode</label>
   </div>
 </form>
 </div> 
 <div class="mdl-tabs__panel" id="Win-panel">
   <form action="#">
-  <div class="mdl-textfield mdl-js-textfield">
-    <textarea class="mdl-textfield__input" type="text"  id="#destination-win" ></textarea>
+  <div class="destination mdl-textfield mdl-js-textfield">
+    <textarea class="mdl-textfield__input" type="text"  id="#destination-win" style="font-family: win_innwaregular;"></textarea>
     <label class="mdl-textfield__label" for="destination">WinMyanmar</label>
   </div>
 </form>
