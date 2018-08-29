@@ -1,10 +1,42 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, jsonify
+import z2u
+import u2z
+import w2u
+import u2w
 
 myapp=Flask(__name__)
 
 @myapp.route("/")
 def main():
     return render_template("index.html")
+
+@myapp.route("/convert", methods=["POST"])
+def convert():
+    myinput = request.form['myinput']
+    myoutput = request.form['myoutput']
+    source = request.form['source']
+
+    if myinput == "Zawgyi" and myoutput == "Unicode":
+        output = z2u.convert(source)
+        return jsonify({'output': output})
+    if myinput == "Zawgyi" and myoutput == "WinMyanmar":
+        output = z2u.convert(source)
+        output = u2w.convert(output)
+        return jsonify({'output': output})
+    if myinput == "Unicode" and myoutput == "Zawgyi":
+        output = u2z.convert(source)
+        return jsonify({'output': output})
+    if myinput == "Unicode" and myoutput == "WinMyanmar":
+        output = u2w.convert(source)
+        return jsonify({'output': output})
+    if myinput == "WinMyanmar" and myoutput == "Zawgyi":
+        output = w2u.convert(source)
+        output = u2z.convert(output)
+        return jsonify({'output': output})
+    if myinput == "WinMyanmar" and myoutput == "Unicode":
+        output = w2u.convert(source)
+        return jsonify({'output': output})
+    return jsonify({'output':"Enter Your Text"})
 
 
 @myapp.route("/home")
