@@ -36,7 +36,7 @@ def convert():
     if myinput == "WinMyanmar" and myoutput == "Unicode":
         output = w2u.convert(source)
         return jsonify({'output': output})
-    return jsonify({'output':"Enter Your Text"})
+    return jsonify({'output': source})
 
 
 @myapp.route("/home")
